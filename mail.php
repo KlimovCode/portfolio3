@@ -10,7 +10,11 @@
 	echo $message;
 	// mail($to, $subject, $message, $headers); //отправляет получателю на емайл значения переменных
 
-	if(mail($to, $subject, $message, $headers) ) {header('Location: success.html');
-	} else {header('Location: error.html');
+	if(mail($to, $subject, $message, $headers) ) {
+		// header('Location: success.html');
+		echo '<meta http-equiv = "Refresh" content="0; URL=success.html#intro">';
+	} else {
+		// header('Location: error.html');
+		echo '<meta http-equiv = "Refresh" content="0; URL=error.html#intro"';
 	}
 ?>
